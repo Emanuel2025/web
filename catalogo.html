@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo - Joyería Manuel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #c4a147;
+            --secondary-color: #2c2c2c;
+            --accent-color: #e9d5a1;
+            --text-gold: #c4a147;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+        }
+
+        nav {
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 1rem 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .catalog-header {
+            text-align: center;
+            padding: 3rem 1rem;
+            background-color: #f9f9f9;
+        }
+
+        .catalog-header h1 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--text-gold);
+            color: #000000;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--text-gold);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            font-weight: 500;
+            margin: 0.5rem;
+            cursor: pointer;
+        }
+
+        .category-btn:hover {
+            background-color: transparent;
+            color: var(--text-gold);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            text-align: center;
+            border: 1px solid rgba(196, 161, 71, 0.1);
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .product-title {
+            font-size: 1.3rem;
+            color: var(--secondary-color);
+            margin: 1rem 0;
+            font-weight: 600;
+        }
+
+        .product-description {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .product-price {
+            color: var(--text-gold);
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 1rem 0;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="catalogo.html">Catálogo</a></li>
+            <li><a href="envios.html">Envíos</a></li>
+            <li><a href="pagos.html">Pagos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <div class="catalog-container">
+        <h1>Nuestra Colección</h1>
+        
+        <div class="categories">
+            <button class="category-btn active" data-category="all">Todos</button>
+            <button class="category-btn" data-category="anillos">Anillos</button>
+            <button class="category-btn" data-category="collares">Collares</button>
+            <button class="category-btn" data-category="pulseras">Pulseras</button>
+        </div>
+
+        <div class="products-grid">
+            <!-- Anillos -->
+            <div class="product-card" data-category="anillos">
+                <img src="images/anillo.jpg" alt="Anillo de Compromiso Clásico" class="product-image">
+                <h3 class="product-title">Anillo de Compromiso Clásico</h3>
+                <p class="product-description">Elegante anillo de oro 18k con diamante central de corte brillante. Diseño atemporal que simboliza el amor eterno.</p>
+                <p class="product-price">$1,299.99</p>
+                <a href="#" class="product-button">Ver Detalles</a>
+            </div>
+
+            <div class="product-card" data-category="anillos">
+                <img src="images/51en0CNBeML.jpg" alt="Anillo de Bodas Vintage" class="product-image">
+                <h3 class="product-title">Anillo de Bodas Vintage</h3>
+                <p class="product-description">Delicado anillo de oro blanco con detalles vintage y pequeños diamantes incrustados. Perfecto para ocasiones especiales.</p>
+                <p class="product-price">$899.99</p>
+                <a href="#" class="product-button">Ver Detalles</a>
+            </div>
+
+            <!-- Collares -->
+            <div class="product-card" data-category="collares">
+                <img src="images/WhatsApp-Image-2023-10-10-at-1.13.28-PM.jpeg" alt="Collar de Oro Exclusivo" class="product-image">
+                <h3 class="product-title">Collar de Oro Exclusivo</h3>
+                <p class="product-description">Magnífico collar de oro 18k con diseño único. Una pieza que combina elegancia y modernidad para ocasiones especiales.</p>
+                <p class="product-price">$1,499.99</p>
+                <a href="#" class="product-button">Ver Detalles</a>
+            </div>
+
+            <div class="product-card" data-category="collares">
+                <img src="images/oro-joyas-como_hacer_369474443_112605883_1706x960.webp" alt="Collar de Oro Artesanal" class="product-image">
+                <h3 class="product-title">Collar de Oro Artesanal</h3>
+                <p class="product-description">Collar artesanal elaborado en oro de 18k con acabado mate. Una pieza única que refleja la maestría de nuestros artesanos.</p>
+                <p class="product-price">$1,299.99</p>
+                <a href="#" class="product-button">Ver Detalles</a>
+            </div>
+
+            <!-- Pulseras -->
+            <div class="product-card" data-category="pulseras">
+                <img src="images/REP_pulsera_rígida_golden_en_oro_amarillo_de_18_kt_1.jpg" alt="Pulsera Golden Classic" class="product-image">
+                <h3 class="product-title">Pulsera Golden Classic</h3>
+                <p class="product-description">Elegante pulsera rígida en oro amarillo de 18kt. Diseño clásico que nunca pasa de moda, perfecto para cualquier ocasión.</p>
+                <p class="product-price">$899.99</p>
+                <a href="#" class="product-button">Ver Detalles</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Joyería Manuel - Todos los derechos reservados</p>
+    </footer>
+
+    <script>
+        // Filtrado de productos por categoría
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryButtons = document.querySelectorAll('.category-btn');
+            const products = document.querySelectorAll('.product-card');
+
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remover clase active de todos los botones
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+                    // Agregar clase active al botón clickeado
+                    button.classList.add('active');
+
+                    const category = button.getAttribute('data-category');
+
+                    products.forEach(product => {
+                        if (category === 'all' || product.getAttribute('data-category') === category) {
+                            product.style.display = 'block';
+                        } else {
+                            product.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
